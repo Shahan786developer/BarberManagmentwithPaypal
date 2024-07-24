@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "{%  static 'barpp\css\login.css' %} " >
+</head>
+<body >
+    <div class="login-box">
+        <form action="" method="post">
+            {% csrf_token %}
+            <center>
+                <h1>Login</h1>
+                <div class="text" >
+                   <i class="fa fa-user" aria-hidden="true"></i>
+                 {{ form.username }}
+              {% comment %} {{login_form.username}} {% endcomment %}
+              <input type="text" name="username" autofocus="" autocapitalize="none" maxlength="150" required="" id="id_username" placeholder="username">
+              {% comment %} {% render_field form.name placeholder="Enter name" class+="login_form.username"%} {% endcomment %}
+                 <!-- <input type="text" placeholder="User name" name="" value=""> -->
+                </div>
+            </center>
+                <div class="text">
+                    <input type="password" name="password" autocomplete="current-password" required="" id="id_password" placeholder="password">
+                
+                   <!-- <i class="fa fa-key" aria-hidden="true"></i>-->
+                    <!-- <input type="text" placeholder="Password" name="" value=""> -->
+                 {% comment %} {{login_form.password}}   {% endcomment %}
+        
+                </div>
+                <center>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <!-- <button type="submit">submit</button> -->
+                <input class="btn" type="submit" value="Sign-in">
+                <p>If not member of barber shop then <br> <a class="reg-link" href=" {% url 'reg' %}">Register here!</a> </p>
+                <a href="{% url 'index' %}"><img src="{% static 'barpp\images\logo.png' %}"   ></a>   
+            </center>
+
+        </form>
+    </div>
+</body>
+</html>

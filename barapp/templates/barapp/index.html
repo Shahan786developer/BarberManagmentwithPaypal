@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    
+    
+    {% block nav %}     
+    
+        
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href= "{%  static 'barpp\css\style.css' %} " >
+    <link rel="stylesheet"media="screen and (max-width:500px)" href= "{%  static 'barpp\css\tablet.css' %} " >
+    <link rel="stylesheet"media="screen and (max-width:410px) href= "{%  static 'barpp\css\mobile.css' %} " >
+    <link rel="stylesheet"media="screen and (max-width:780px) href= "{%  static 'barpp\css\ipaid.css' %} " >
+
+
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" " href="">
+    <link rel="stylesheet" " href="">
+    <link rel="stylesheet"  href=""> -->
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@100&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e91bbb4110.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+</head>
+
+<body>
+    
+    <!-- preloader -->
+     <!-- <div id="preloader">
+
+    </div>  -->
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/92lY8OTy8Bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/92lY8OTy8Bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/92lY8OTy8Bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+    <!-- dronebox -->
+    <div class="container" id="banner">
+        
+        <div id="drone-box">
+            <img src="{% static 'barpp\images\drone.png' %}" class="drone-pic" alt="">
+            <img src="{% static 'barpp\images\drone-left.png'  %}" class="left-pic" alt="">
+            <img src="{% static 'barpp\images\drone-right.png' %}"  class="right-pic" alt="">
+        </div>
+    
+
+    <!-- home -->
+        <div class="logo">
+               
+                        <!-- <div class="overlay">  -->
+                            <img src="{% static 'barpp\images\logo.png' %}"   >
+            <!-- <img src="./image/logo.png" alt=""> -->
+        </div>
+        <div class="centre">
+            <h1>Barber Hair Studio</h1>
+            <p>Style your hair is style your life</p>
+            <div class="btn">
+                <a href="{% url 'order' %}"><span></span>Give Order</a>
+                <a href="{% url 'profile' %}"><span></span>Profile</a>
+            </div>
+        </div>
+        <div id="navbar">
+            <ul>
+                {% if request.user.is_authenticated %}
+
+                
+                    
+                {% endif %}
+                <li><a href="#banner">HOME</a></li>
+                <li><a href="#package">PACKAGES</a></li>
+                <li><a href="#feature">FEATURES</a></li>
+                <li><a href="#service">SERVICES</a></li>
+                <!-- <li><a href="#review">REVIEWS</a></li> -->
+                <li><a href="#testimonial">TESTIMONIALS</a></li>
+                <li><a href="#footer">MEET US</a></li>
+                
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'allrev' %}">Reviews</a></li>
+                <li><a href="{% url 'week' %}">Reports</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            
+              
+
+                {% endif %}
+                    
+                {% if not request.user.is_authenticated %}
+  
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'reg' %}">Register</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+        <div id="menuBtn">
+            <img src="{% static 'barpp\images\menu.png' %}" id="menu"  >
+            <!-- <img src="{% static 'barpp\images\close.png' %}"   > -->
+            <!-- <img src="./image/" id="menu"> -->
+        </div>
+    </div>
+    </body>
+    {% endblock nav %}
+    {% block home %}
+    
+    {% endblock home %}
+    <!-- feature -->
+    <div id="package">
+        <div class="title">
+            <p>PACKAGES</p>
+            <h1>PACKAGE & DETAIL</h1>
+        </div>
+    </div>
+    <ul id="dropdown">
+        <li>
+            <label for="first">Package someone expand for details <span>&#x3e</span></label>
+            <input type="radio" name="dropdown" id="first" checked>
+            <div class="content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti earum incidunt molestiae ea obcaecati iure ratione. Doloremque quis officiis sequi saepe quas, deleniti sed ullam hic modi dolore nemo repellendus cupiditate numquam?</p>
+            </div>
+        </li>
+
+        <li>
+            <label for="second">Package someone expand for details  <span>&#x3e</span></label>
+            <input type="radio" name="dropdown" id="second">
+            <div class="content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti earum incidunt molestiae ea obcaecati iure ratione. Doloremque quis officiis sequi saepe quas, deleniti sed ullam hic modi dolore nemo repellendus cupiditate numquam?</p>
+            </div>
+        </li>
+
+        <li>
+            <label for="third">Package someone expand for details  <span>&#x3e</span></label>
+            <input type="radio" name="dropdown" id="third">
+            <div class="content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti earum incidunt molestiae ea obcaecati iure ratione. Doloremque quis officiis sequi saepe quas, deleniti sed ullam hic modi dolore nemo repellendus cupiditate numquam?</p>
+            </div>
+        </li>
+    </ul>
+    <!-- new add -->
+
+
+
+    <!-- feature -->
+    <div id="feature">
+        <div class="title">
+            <p>FEATURES</p>
+            <h1>WHY CHOOSE US</h1>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-1">
+            <h1>Experienced Staff</h1>
+            <div class="first"><i class="fas fa-chevron-circle-right"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis facere repudiandae doloribus
+                    sit ut.</p>
+            </div>
+            <h1>Pre booking online</h1>
+            <div class="first"><i class="fas fa-chevron-circle-right"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis facere repudiandae doloribus
+                    sit ut.</p>
+            </div>
+            <h1>Affordable Cost</h1>
+            <div class="first"><i class="fas fa-chevron-circle-right"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis facere repudiandae doloribus
+                    sit ut.</p>
+            </div>
+        </div>
+        <div class="feature-2">
+            <img src="{% static 'barpp\images\barber-man.jpg' %}"   >
+            <!-- <img src="./image/" alt="">:"|" -->
+        </div>
+    </div>
+    
+
+
+    <!-- services -->
+<div id="service">
+        <div class="title">
+            <p>SERVICES</p>
+            <h1>WE PROVIDE BETTER</h1>
+        </div>
+
+        <div class="services">
+            <div class="services1">
+                <img src="{% static 'barpp\images\pic-1.jpg' %}"   >
+               
+                <div class="overlay">
+                    <div class="over1">
+                        <h2>Hair Styling</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero facere eos!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="services1">
+                <img src="{% static 'barpp\images\pic-2.jpg' %}"   >                <div class="overlay">
+                    <div class="over1">
+                        <h2>Board Trim</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero facere eos!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="services1">
+                <img src="{% static 'barpp\images\pic-3.jpg' %}"   >                <div class="overlay">
+                    <div class="overlay">
+                    <div class="over1">
+                        <h2>Hair Cut</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero facere eos!</p>
+                    </div>
+                </div> 
+             </div> </div>
+      
+                <div class="services1">
+                <img src="{% static 'barpp\images\pic-4.jpg' %}"   >      
+                         
+                    <div class="overlay">
+                    <div class="over1">
+                        <h2>Dry Shampoo</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero facere eos!</p>
+                    </div>
+                </div>
+                
+            
+         
+            </div>
+ </div>
+            
+     
+  
+   
+<!--     
+      
+        <div id="review" class="title" style="padding-bottom: 4px;">
+            <p>Reviews</p>
+            <h1>Our Cusstomer Reviews</h1>
+            {% for i in rew %}         
+   <div style="border: none ; width: 41%; text-align:center; margin: 6px auto; border-bottom: 2px solid #009688;padding: 6px 4px;"> 
+            
+    <p1 >{{i.rew}}.</p1> 
+   </div>  
+     {% endfor %}
+
+        </div>
+       
+    </div>
+</div> -->
+    <!-- testimonial -->
+    
+    <div id="testimonial">
+        <div class="title">
+            <p>TESTIMONIAL</p>
+            <h1>WHAT CLIENT SAYS</h1>
+        </div>
+        <div class="testimonia">
+            <div class="testi">
+                <div class="testi1">
+                    <div class="testi2">
+                        <img src="{% static 'barpp\images\img-1.jpg' %}"   >
+                    </div>
+                    <div class="testi3">
+                        <h5>ABDULLAH IQBAL <i class="fab fa-twitter-square"></i></h5>
+                        <small>@abdullahiqbal</small>
+                    </div>
+                </div>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique, distinctio, est ipsa ex
+                    aliquam nobis veniam obcaecati voluptas hic odio repellendus quo. Expedita id consequuntur corporis
+                    quod, qui vitae.</p>
+            </div>
+            <div class="testi">
+                <div class="testi1">
+                    <div class="testi2">
+                        <img src="{% static 'barpp\images\img-2.jpg' %}"   >
+                    </div>
+                    <div class="testi3">
+                        <h5>MEMONA AMJAD <i class="fab fa-twitter-square"></i></h5>
+                        <small>@memonaamjad</small>
+                    </div>
+                </div>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique, distinctio, est ipsa ex
+                    aliquam nobis veniam obcaecati voluptas hic odio repellendus quo.</p>
+            </div>
+            <div class="testi">
+                <div class="testi1">
+                    <div class="testi2">
+                        <img src="{% static 'barpp\images\img-3.jpg' %}"   >
+                    </div>
+                    <div class="testi3">
+                        <h5>USAMA RAFAQAT <i class="fab fa-twitter-square"></i></h5>
+                        <small>@usamarafaqat</small>
+                    </div>
+                </div>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique, distinctio, est ipsa ex
+                    aliquam nobis veniam obcaecati voluptas hic odio repellendus quo. Expedita id consequuntur corporis
+                    quod, qui vitae.</p>
+            </div>
+        </div>
+        
+        
+       
+       {% block foot %}
+        
+       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.8514381894843!2d74.18007201464826!3d32.18128062142943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f2958e66e5ad1%3A0xf0361ace398f88e7!2sChase%20UP!5e0!3m2!1sen!2s!4v1677499882961!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+       <body>
+        <!-- footer -->
+        <div id="footer">
+            <div class="title">
+                <p>CONTACT</p>
+                <h1>VISIT SHOP</h1>
+                <div class="pic3">
+                    <img src="{% static 'barpp\images\footer-img.png' %}"   >
+                </div>
+            </div>
+
+            <div class="footer1">
+                <div class="footer-l">
+                    <h3>Opening Hours</h3>
+                    <small><i class="fas fa-clock"></i>&nbsp; Monday to Friday-9am to 9pm</small>
+                    <small><i class="fas fa-clock"></i>&nbsp; Saturday and Sunday-8am to 11pm</small>
+                </div>
+                <div class="footer-r">
+                    <h3>Get in Touch</h3>
+                    <small><i class="fas fa-map-marker-alt"></i>&nbsp; #rahwaliCantt.xyz.City in</small>
+                    <small><i class="fas fa-phone"></i>&nbsp; +92-3056316833</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="end">
+            <ul>
+                <a href=""><li><i class="fab fa-facebook-f"></i></li></a>
+                <a href=""><li><i class="fab fa-instagram"></i></li></a>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-youtube"></i></li>
+            </ul>
+        </div>
+        <script>
+            var menu = document.getElementById("menu")
+            var navbar = document.getElementById("navbar")
+            var menuBtn = document.getElementById("menuBtn")
+            navbar.style.right = "-250px"
+            menuBtn.onclick = function () {
+                if (navbar.style.right == "-200px") {
+                    navbar.style.right = "0px"
+                    menu.src = "{% static 'barpp\images\close.png' %}"   
+                }
+                else {
+                    navbar.style.right = "-200px"
+                    menu.src = "{% static 'barpp\images\menu.png' %}"   
+                               }
+            }
+            
+            var scroll = new SmoothScroll('a[href*="#"]', {
+	        speed: 1500,
+	        speedAsDuration: true
+            });
+            
+            // prompt("Enter Your Name")
+        </script>
+
+        <script>
+            var loader=document.getElementById("preloader")
+            window.addEventListener("load",function(){
+                loader.style.display="none";
+            })
+        </script>
+
+<script>
+    $('#banner').mousemove(function(e){
+        var moveX = (e.pageX * -1/2)+300;
+        var moveY = (e.pageY * -1/3)+120;
+        $('#drone-box').css({
+             'transform':'translate3d('+moveX+'px,'+moveY+'px,0)'
+        });
+    });
+</script>
+
+</body>
+{% endblock foot %}
+</html>

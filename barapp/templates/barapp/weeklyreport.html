@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #444;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: #555;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Table for completed orders -->
+<h2>Reports</h2>
+<table>
+  <tr>
+    <th>Ordered Date</th>
+    <th>User</th>
+    <th>Services</th>
+    <th>Description</th>
+    <th>Working Date</th>
+    <th>Working Time</th>
+    <th>Price</th>
+  </tr>
+  {% for order in orders %}
+  <tr>
+    <td>{{ order.ordered_date }}</td>
+    <td>{{ order.user.username }}</td>
+    <td>
+      <ul>
+        {% for service in order.services.all %}
+        <li>{{ service.name }}</li>
+        {% endfor %}
+      </ul>
+    </td>
+    <td>{{ order.desc }}</td>
+    <td>{{ order.working_date }}</td>
+    <td>{{ order.working_time }}</td>
+    <td>{% if order.price %} ${{ order.price }} {% else %} None {% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<!-- Table for incomplete orders -->
+<!--
+<h2>Incomplete Orders</h2>
+<table>
+  <tr>
+    <th>Ordered Date</th>
+    <th>User</th>
+    <th>Services</th>
+    <th>Description</th>
+    <th>Working Date</th>
+    <th>Working Time</th>
+    <th>Price</th>
+  </tr>
+  {% for order in incomplete_orders %}
+  <tr>
+    <td>{{ order.ordered_date }}</td>
+    <td>{{ order.user.username }}</td>
+    <td>
+      <ul>
+        {% for service in order.services.all %}
+        <li>{{ service.name }}</li>
+        {% endfor %}
+      </ul>
+    </td>
+    <td>{{ order.desc }}</td>
+    <td>{{ order.working_date }}</td>
+    <td>{{ order.working_time }}</td>
+    <td>{% if order.price %} ${{ order.price }} {% else %} None {% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+-->
+
+</body>
+</html>

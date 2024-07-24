@@ -1,0 +1,56 @@
+.title h1{
+    font-size: 23px;
+}
+.feature-2 img{
+    width: 180px;
+}
+.pic3 img{
+    width: 220px;
+}
+.testi p{
+    font-size: 12.5px;
+}
+.footer1{
+    flex-direction: column;
+}
+.footer-l{
+    width: 100%;
+    text-align: center;
+}
+.footer-r{
+    width: 100%;
+    text-align: center;
+}
+.end .fab{
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    border: 2.5px solid #fff;
+}
+
+#dropdown {
+    margin: 140px auto;
+    width: 315px;
+}
+#dropdown li label {
+    padding: 1px;
+    font-size: 15.5px;
+}
+#dropdown li {
+    padding: 2px;
+}
+
+
+#dropdown li{
+    padding: 0px;
+}
+
+#dropdown .content {
+    padding: 0 4px;
+    font-size: 11px;
+}
+
+#dropdown li label {
+    font-size: 16px;
+    padding: 4px;
+}

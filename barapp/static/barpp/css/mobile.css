@@ -1,0 +1,21 @@
+.feature-1 h1{
+    font-size: 22px;
+}
+.first .fas{
+    font-size: 15px;
+}
+.feature-1 p{
+    font-size: 13.5px;
+}
+.features{
+    padding: 0px 0px;
+}
+.services1:hover .over1{
+    bottom: 25%;
+}
+.btn{
+    flex-direction: column;
+}
+.centre p{
+    font-size: 15px;
+}

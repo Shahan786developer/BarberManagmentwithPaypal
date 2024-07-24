@@ -1,0 +1,34 @@
+.features{
+    flex-direction: column;
+}
+.feature-1{
+    width: 100%;
+}
+.feature-2{
+    width: 100%;
+}
+.services{
+    grid-template-columns: repeat(1,1fr);
+}
+.testimonia{
+    flex-direction: column;
+}
+.testi{
+    width: 80%;
+    margin: 25px auto 0px;
+}
+.end ul{
+    width: 80%;
+}
+.footer1{
+    width: 93%;
+}
+.testi{
+    width: 93%;
+}
+
+
+#dropdown {
+    margin: 200px auto;
+    width: 450px;
+}

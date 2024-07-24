@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "{%  static 'barpp\css\login.css' %} " >
+</head>
+<style>
+    .error-message {
+    color: red; /* Set the color for error messages */
+    font-size: 14px; /* Adjust font size as needed */
+    margin-top: 5px; /* Add spacing between error messages and the input fields */
+}
+
+</style>
+<body>
+    <div class="login-box">
+       <form action="" method="post">
+        {% csrf_token %}
+        <center>
+            <h1>Registration</h1>
+          <!-- Existing HTML code -->
+<!-- Existing HTML code -->
+
+<div class="text">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" placeholder="username">
+ 
+</div>
+{% for error in register_form.username.errors %}
+<p class="error-message">{{ error }}</p>
+{% endfor %}
+<div class="text">
+    <input type="email" name="email" required="" id="id_email" placeholder="email">
+   
+</div>
+{% for error in register_form.email.errors %}
+<p class="error-message">{{ error }}</p>
+{% endfor %}
+
+<div class="text">
+    <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" placeholder="password">
+
+</div>
+{% for error in register_form.password1.errors %}
+<p class="error-message">{{ error }}</p>
+{% endfor %}
+
+<div class="text">
+    <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" placeholder="confirm password">
+ 
+</div>
+{% for error in register_form.password2.errors %}
+<p class="error-message">{{ error }}</p>
+{% endfor %}
+
+
+<!-- Remaining HTML code -->
+
+
+<!-- Remaining HTML code -->
+
+            <center>
+ 
+                <!-- <button type="submit">submit</button> -->
+            <input class="btn" type="submit" value="Sign-in">
+            <p>If already member of barber shop then <br> <a class="reg-link" href=" {% url 'login' %}">  Login here!</a> </p>
+            <a href="{% url 'index' %}"><img src="{% static 'barpp\images\logo.png' %}"   ></a> 
+        </center>
+          
+         </form>
+   
+    </div>
+</body>
+
+</html>
